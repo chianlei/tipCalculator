@@ -1,4 +1,4 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, {Component, useState, useEffect, useRef} from 'react';
 import {
   Flex,
   Text,
@@ -12,14 +12,41 @@ import {
 } from 'native-base';
 
 export default function SelectTip({setSelectedTip, selectedTip}) {
-  function onChangeTip(e) {
-    setSelectedTip(e);
+  function tipSelected(value) {
+    // const { value } = e.target;
+    // console.log(value);
+    setSelectedTip(value);
   }
+  const btnRef = useRef();
+  // const tipSelected = (e, value) => {
+  //   setSelectedTip(e, value);
+  // };
+  //  const [tip, setTip] = useState([
+  //    {value: '5'},
+  //    {value: '10'},
+  //    {value: '15'},
+  //    {value: '25'},
+  //    {value: '50'},
+  //  ]);
+  const [tip, setTip] = useState(0);
+  //  const pressHandler = value => {
+  //    setTip(value);
+  //    console.log(value);
+  //  };
 
-    useEffect(() => {
-      console.log('tip: ' + selectedTip);
-    }, [selectedTip]);
-  
+  useEffect(() => {
+    console.log('tip: ' + tip);
+  }, []);
+
+  // const value1 = 5;
+  //  const value2 = 10;
+  // const value = 0;
+
+  //  const tipSelected = () => {
+  //    setSelectedTip(5);
+  //       // setSelectedTip(10);
+  //  };
+
   return (
     <>
       <Box my="10px" mx="14px" px="10px">
@@ -28,7 +55,14 @@ export default function SelectTip({setSelectedTip, selectedTip}) {
         </Text>
         <HStack justifyContent="space-between">
           <Button
-            onPress={setSelectedTip(5)}
+            ref={btnRef}
+            // onPress={setTip(5)}
+            // onPress={tipSelected(5)}
+            // onPress={e => tipSelected(e)}
+            title="5"
+            onPress={tipSelected}
+   
+            // onPress={() => console.log('title:' +btnRef.current.props.title)}
             w="160px"
             _pressed={{
               bg: '#26C2AE',
@@ -36,13 +70,23 @@ export default function SelectTip({setSelectedTip, selectedTip}) {
             bg="#00474B"
             py="2"
             rounded="sm">
-            <Text bold color="white" textAlign="center" fontSize="18px">
-              5
+            <Text
+              bold
+              color="white"
+              textAlign="center"
+              fontSize="18px"
+              // onPress={() => tipSelected()}
+              // onPress={e => tipSelected(e, value)}
+              // onPress={setSelectedTip(5)}
+            >
+              5 %
             </Text>
           </Button>
           <Pressable
             value="10"
-            onPress={setSelectedTip(10)}
+            // onPress={tipSelected}
+            // onPress={setTip(10)}
+            // onPress={setSelectedTip(10)}
             w="160px"
             _pressed={{
               bg: '#26C2AE',
@@ -57,7 +101,9 @@ export default function SelectTip({setSelectedTip, selectedTip}) {
         </HStack>
         <HStack justifyContent="space-between">
           <Pressable
-            onPress={setSelectedTip(15)}
+            value="15"
+            // onPress={tipSelected}
+            // onPress={setSelectedTip(15)}
             mt="10px"
             w="160px"
             _pressed={{
@@ -71,7 +117,9 @@ export default function SelectTip({setSelectedTip, selectedTip}) {
             </Text>
           </Pressable>
           <Pressable
-            onPress={setSelectedTip(25)}
+            value="25"
+            // onPress={tipSelected}
+            // onPress={setSelectedTip(25)}
             mt="10px"
             w="160px"
             _pressed={{
@@ -88,7 +136,9 @@ export default function SelectTip({setSelectedTip, selectedTip}) {
         <HStack justifyContent="space-between">
           <Box>
             <Pressable
-              onPress={setSelectedTip(50)}
+              value="50"
+              // onPress={tipSelected}
+              // onPress={setSelectedTip(50)}
               mt="10px"
               w="160px"
               _pressed={{
@@ -104,11 +154,12 @@ export default function SelectTip({setSelectedTip, selectedTip}) {
           </Box>
           <Box>
             <Input
+              value={selectedTip}
               mt="12px"
               borderRadius="5"
               w="160px"
               h="40px"
-              onChangeText={onChangeTip}
+              // onChangeText={tipSelected}
               maxLength={2}
               minLength={1}
               placeholder="Custom"

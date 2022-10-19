@@ -5,11 +5,12 @@ import BillInput from './BillInput';
 import SelectTip from './SelectTip';
 import PeopleInput from './PeopleInput';
 import TotalTip from './TotalTip';
+import TipSelect from './TipSelect';
 // import {Keyboard} from 'react-native';44
 
 export default function TipCalculator() {
   const [inputBill, setInputBill] = useState(0);
-  const [selectedTip, setSelectedTip] = useState();
+  const [selectedTip, setSelectedTip] = useState(0);
   const [inputPeople, setInputPeople] = useState(0);
 
   const handleBill = bill => {
@@ -24,9 +25,9 @@ export default function TipCalculator() {
     setInputPeople(people);
   };
 
-//   useEffect(() => {
-//     console.log('tip: ' + selectedTip);
-//   }, [selectedTip]);
+  //   useEffect(() => {
+  //     console.log('tip: ' + selectedTip);
+  //   }, [selectedTip]);
 
   return (
     <>
@@ -35,12 +36,16 @@ export default function TipCalculator() {
         <FormControl> */}
 
       <BillInput setBill={handleBill} inputBill={inputBill} />
-          <SelectTip setSelectedTip={setSelectedTip} selectedTip={selectedTip} />
+      {/* <SelectTip setSelectedTip={setSelectedTip} selectedTip={selectedTip} /> */}
+      <TipSelect setSelectedTip={setSelectedTip} selectedTip={selectedTip} />
       <PeopleInput setPeople={handlePeople} inputPeople={inputPeople} />
       <TotalTip
         inputBill={inputBill}
         selectedTip={selectedTip}
         inputPeople={inputPeople}
+        setInputBill={setInputBill}
+        setSelectedTip={setSelectedTip}
+        setInputPeople={setInputPeople}
       />
 
       {/* {Keyboard.dismiss()} */}

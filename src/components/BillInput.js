@@ -15,7 +15,13 @@ export default function BillInput({setBill, inputBill}) {
       <Box bgColor="#C5E4E7">
         <Box borderTopRadius={30} bg="white">
           <Box mx="25px" mt="20px" mb="10px">
-            <Text color="#5E7A7D" fontSize="16px" bold mb="8px">
+            <Text
+              color="#5E7A7D"
+              fontSize="16px"
+              bold
+              mb="8px"
+              // style={{ fontFamily: 'SpaceMono-Bold' }}
+            >
               Bill
             </Text>
             <Center>
@@ -28,7 +34,7 @@ export default function BillInput({setBill, inputBill}) {
                 placeholderTextColor="#00474A"
                 w="100%"
                 value={inputBill}
-                onChangeText = {onChangeBill}
+                onChangeText={onChangeBill}
                 InputLeftElement={
                   <Icon
                     as={<Foundation name="dollar" />}

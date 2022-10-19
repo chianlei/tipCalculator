@@ -11,11 +11,20 @@ import {
   Pressable,
 } from 'native-base';
 
-export default function TotalTip({inputBill, selectedTip, inputPeople}) {
+export default function TotalTip({
+  inputBill,
+  selectedTip,
+  inputPeople,
+  setInputBill,
+  setSelectedTip,
+  setInputPeople,
+}) {
   useEffect(() => {
     console.log('bill: ' + inputBill);
-    console.log('tip: ' + selectedTip);
+    console.log('tip%: ' + selectedTip);
     console.log('pp: ' + inputPeople);
+    console.log('td: ' + tipTD);
+        console.log('total: ' + total);
   });
 
   const tipAmount = (inputBill * selectedTip) / 100 / inputPeople;
@@ -26,7 +35,6 @@ export default function TotalTip({inputBill, selectedTip, inputPeople}) {
 
   return (
     <>
-      {console.log('bill: ' + inputBill)}
       <Box
         w="373px"
         h="233px"
@@ -43,7 +51,7 @@ export default function TotalTip({inputBill, selectedTip, inputPeople}) {
           </Box>
           <Box>
             <Text color="#26C2AE" bold fontSize="28px">
-              $ {tipTD}$ 0
+              $ {tipTD}
             </Text>
           </Box>
         </HStack>
@@ -56,11 +64,14 @@ export default function TotalTip({inputBill, selectedTip, inputPeople}) {
           </Box>
           <Box>
             <Text color="#26C2AE" bold fontSize="28px">
-              $ {total}$ 0
+              $ {total}
             </Text>
           </Box>
         </HStack>
         <Pressable
+          onPress={() => {
+            setInputBill(0), setSelectedTip(0), setInputPeople(0);
+          }}
           mx="5"
           mt="15px"
           w="90%"

@@ -6,10 +6,9 @@ export default function PeopleInput({setPeople, inputPeople}) {
   const onChangePeople = e => {
     setPeople(e);
   };
-
   return (
     <>
-      <Box mx="25px" my="10px">
+      <Box mx="28px" my="10px">
         <Text color="#5E7A7D" fontSize="16px" bold mb="8px">
           Number of People
         </Text>
@@ -34,6 +33,7 @@ export default function PeopleInput({setPeople, inputPeople}) {
             keyboardType="numeric"
           />
         </Center>
+        {inputPeople == 0 ? <Text color='red.500'>Can't be zero</Text> : ''}
       </Box>
     </>
   );

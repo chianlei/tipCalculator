@@ -50,21 +50,21 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
   const pressHandler = value => {
     setSelectedTip(value);
   };
-  const styles = {
-    container: {
-      flexWrap: 'wrap',
-    },
-    item: {
-      backgroundColor: '#00474B',
-      color: 'white',
-      paddingLeft: 50,
-      paddingRight: 50,
-      paddingTop: 10,
-      paddingBottom: 10,
-      fontSize: 18,
-      marginTop: 5,
-    },
-  };
+  // const styles = {
+  //   container: {
+  //     flexWrap: 'wrap',
+  //   },
+  //   item: {
+  //     backgroundColor: '#00474B',
+  //     color: 'white',
+  //     paddingLeft: 50,
+  //     paddingRight: 50,
+  //     paddingTop: 10,
+  //     paddingBottom: 10,
+  //     fontSize: 18,
+  //     marginTop: 5,
+  //   },
+  // };
   // return (
   //   <>
   //     <FlatList
@@ -110,7 +110,7 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
               >
                 <Text
                   // style={styles.item}
-                  py="1.5"
+                  py="2"
                   bold
                   color="white"
                   textAlign="center"

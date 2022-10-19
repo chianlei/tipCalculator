@@ -14,7 +14,7 @@ export default function BillInput({setBill, inputBill}) {
     <>
       <Box bgColor="#C5E4E7">
         <Box borderTopRadius={30} bg="white">
-          <Box mx="25px" mt="20px" mb="10px">
+          <Box mx="28px" mt="20px" mb="10px">
             <Text
               color="#5E7A7D"
               fontSize="16px"

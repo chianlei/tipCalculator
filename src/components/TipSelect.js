@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, Box, Input, Pressable, View} from 'native-base';
 
-export default function TipSelect({setSelectedTip, selectedTip}) {
+export default function TipSelect({setTip, selectedTip}) {
   const tips = [
     {
       id: '1',
@@ -26,7 +26,7 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
   ];
 
   const pressHandler = value => {
-    setSelectedTip(value);
+    setTip(value);
   };
 
   // const styles = {

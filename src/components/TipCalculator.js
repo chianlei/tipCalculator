@@ -11,30 +11,18 @@ export default function TipCalculator() {
   const [selectedTip, setSelectedTip] = useState(0);
   const [inputPeople, setInputPeople] = useState();
 
-  const handleBill = bill => {
-    setInputBill(bill);
-  };
-
-  const handleTip = tip => {
-    setSelectedTip(tip);
-  };
-
-  const handlePeople = people => {
-    setInputPeople(people);
-  };
-
   return (
     <>
-      <BillInput setBill={handleBill} inputBill={inputBill} />
+      <BillInput setBill={setInputBill} inputBill={inputBill} />
       {/* <SelectTip setSelectedTip={setSelectedTip} selectedTip={selectedTip} /> */}
-      <TipSelect setSelectedTip={handleTip} selectedTip={selectedTip} />
-      <PeopleInput setPeople={handlePeople} inputPeople={inputPeople} />
+      <TipSelect setTip={setSelectedTip} selectedTip={selectedTip} />
+      <PeopleInput setPeople={setInputPeople} inputPeople={inputPeople} />
       <TotalTip
         inputBill={inputBill}
         selectedTip={selectedTip}
         inputPeople={inputPeople}
         setInputBill={setInputBill}
-        setSelectedTip={handleTip}
+        setSelectedTip={setSelectedTip}
         setInputPeople={setInputPeople}
       />
       {/* {Keyboard.dismiss()} */}

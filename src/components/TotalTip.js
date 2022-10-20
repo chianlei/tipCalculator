@@ -77,7 +77,7 @@ export default function TotalTip({
         </HStack>
         <Pressable
           onPress={() => {
-            setInputBill(0), setSelectedTip(0), setInputPeople(0);
+            setInputBill(0), setSelectedTip(0), setInputPeople();
           }}
           mx="5"
           mt="15px"

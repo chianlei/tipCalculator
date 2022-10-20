@@ -63,11 +63,13 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
 
   return (
     <>
-      <Box my="10px" mx="27px">
-        <Text color="#5E7A7D" fontSize="16px" bold mb="8px">
+      <Box my="10px">
+        <Text color="#5E7A7D" fontSize="16px" bold mb="8px" ml="28px">
           Select Tip %
         </Text>
+
         <View
+          ml="31px"
           flexDirection="row"
           flexWrap="wrap"
           // style={styles.container}
@@ -75,7 +77,7 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
           {tips.map(tip => {
             return (
               <Pressable
-                w="158px"
+                w="165px"
                 _pressed={{
                   bg: '#26C2AE',
                 }}
@@ -83,8 +85,7 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
                 my="1"
                 mr="5"
                 rounded="sm"
-                onPress={() => pressHandler(tip.value)}
-              >
+                onPress={() => pressHandler(tip.value)}>
                 <Text
                   // style={styles.item}
                   py="2"
@@ -102,7 +103,7 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
               value={selectedTip}
               mt="5px"
               borderRadius="5"
-              w="160px"
+              w="166px"
               h="40px"
               onChangeText={pressHandler}
               maxLength={2}

@@ -13,7 +13,6 @@ export default function PeopleInput({setPeople, inputPeople}) {
         <Text
           color="#5E7A7D"
           fontSize="16px"
-          bold
           mb="8px"
           style={{fontFamily: 'SpaceMono-Bold'}}>
           Number of People

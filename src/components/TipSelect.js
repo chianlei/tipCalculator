@@ -64,7 +64,12 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
   return (
     <>
       <Box my="10px">
-        <Text color="#5E7A7D" fontSize="16px" bold mb="8px" ml="28px">
+        <Text
+          color="#5E7A7D"
+          fontSize="16px"
+          mb="8px"
+          ml="28px"
+          style={{fontFamily: 'SpaceMono-Bold'}}>
           Select Tip %
         </Text>
 
@@ -87,9 +92,9 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
                 rounded="sm"
                 onPress={() => pressHandler(tip.value)}>
                 <Text
+                  style={{fontFamily: 'SpaceMono-Bold'}}
                   // style={styles.item}
                   py="2"
-                  bold
                   color="white"
                   textAlign="center"
                   fontSize="18px">
@@ -100,6 +105,7 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
           })}
           <Box>
             <Input
+              style={{fontFamily: 'SpaceMono-Bold'}}
               value={selectedTip}
               mt="5px"
               borderRadius="5"

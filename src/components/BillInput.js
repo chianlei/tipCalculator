@@ -15,14 +15,13 @@ export default function BillInput({setBill, inputBill}) {
             <Text
               color="#5E7A7D"
               fontSize="16px"
-              bold
               mb="8px"
-              // style={{ fontFamily: 'SpaceMono-Italic' }}
-            >
+              style={{fontFamily: 'SpaceMono-Bold'}}>
               Bill
             </Text>
             <Center>
               <Input
+                style={{fontFamily: 'SpaceMono-Bold'}}
                 maxLength={10}
                 textAlign="right"
                 fontSize="18px"

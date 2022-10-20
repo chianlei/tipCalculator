@@ -1,10 +1,5 @@
 import React, {Component, useEffect, useState} from 'react';
-import {
-  Text,
-  Box,
-  HStack,
-  Pressable,
-} from 'native-base';
+import {Text, Box, HStack, Pressable} from 'native-base';
 
 export default function TotalTip({
   inputBill,
@@ -39,18 +34,26 @@ export default function TotalTip({
         my="10px">
         <HStack justifyContent="space-between" mb="10px" mx="30" mt="30px">
           <Box>
-            <Text color="white" bold>
+            <Text color="white" style={{fontFamily: 'SpaceMono-Bold'}}>
               Tip Amount
             </Text>
-            <Text color="#7F9E9F"> / person</Text>
+            <Text color="#7F9E9F" style={{fontFamily: 'SpaceMono-Bold'}}>
+              / person
+            </Text>
           </Box>
           <Box>
             {tipTD == 'NaN' ? (
-              <Text color="#26C2AE" bold fontSize="28px">
+              <Text
+                color="#26C2AE"
+                fontSize="28px"
+                style={{fontFamily: 'SpaceMono-Bold'}}>
                 $ 0
               </Text>
             ) : (
-              <Text color="#26C2AE" bold fontSize="28px">
+              <Text
+                color="#26C2AE"
+                fontSize="28px"
+                style={{fontFamily: 'SpaceMono-Bold'}}>
                 $ {tipTD}
               </Text>
             )}
@@ -58,18 +61,26 @@ export default function TotalTip({
         </HStack>
         <HStack justifyContent="space-between" mx="30" my="10px">
           <Box>
-            <Text color="white" bold>
+            <Text color="white" style={{fontFamily: 'SpaceMono-Bold'}}>
               Total
             </Text>
-            <Text color="#7F9E9F"> / person</Text>
+            <Text color="#7F9E9F" style={{fontFamily: 'SpaceMono-Bold'}}>
+              / person
+            </Text>
           </Box>
           <Box>
             {total == 'NaN' ? (
-              <Text color="#26C2AE" bold fontSize="28px">
+              <Text
+                color="#26C2AE"
+                fontSize="28px"
+                style={{fontFamily: 'SpaceMono-Bold'}}>
                 $ 0
               </Text>
             ) : (
-              <Text color="#26C2AE" bold fontSize="28px">
+              <Text
+                color="#26C2AE"
+                fontSize="28px"
+                style={{fontFamily: 'SpaceMono-Bold'}}>
                 $ {total}
               </Text>
             )}
@@ -88,7 +99,11 @@ export default function TotalTip({
           bg="#26C2AE"
           py="2"
           rounded="sm">
-          <Text bold color="#00474B" textAlign="center" fontSize="17px">
+          <Text
+            color="#00474B"
+            textAlign="center"
+            fontSize="17px"
+            style={{fontFamily: 'SpaceMono-Bold'}}>
             RESET
           </Text>
         </Pressable>

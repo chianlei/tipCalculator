@@ -10,11 +10,17 @@ export default function PeopleInput({setPeople, inputPeople}) {
   return (
     <>
       <Box mx="28px" my="10px">
-        <Text color="#5E7A7D" fontSize="16px" bold mb="8px">
+        <Text
+          color="#5E7A7D"
+          fontSize="16px"
+          bold
+          mb="8px"
+          style={{fontFamily: 'SpaceMono-Bold'}}>
           Number of People
         </Text>
         <Center>
           <Input
+            style={{fontFamily: 'SpaceMono-Bold'}}
             textAlign="right"
             fontSize="18px"
             p="10px"

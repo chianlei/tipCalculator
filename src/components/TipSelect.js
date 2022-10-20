@@ -78,10 +78,11 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
           flexDirection="row"
           flexWrap="wrap"
           // style={styles.container}
-          key={tips.id}>
+        >
           {tips.map(tip => {
             return (
               <Pressable
+                key={tip.id}
                 w="165px"
                 _pressed={{
                   bg: '#26C2AE',

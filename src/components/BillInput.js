@@ -1,15 +1,12 @@
 import React, {Component, useEffect} from 'react';
-import {Flex, Text, Input, Center, Box, Icon} from 'native-base';
+import {Text, Input, Center, Box, Icon} from 'native-base';
 import Foundation from 'react-native-vector-icons/Foundation';
 
 export default function BillInput({setBill, inputBill}) {
   function onChangeBill(e) {
     setBill(e);
-  };
+  }
 
-    //   useEffect(() => {
-    //     console.log('bill: ' + e)
-    // })
   return (
     <>
       <Box bgColor="#C5E4E7">
@@ -20,7 +17,7 @@ export default function BillInput({setBill, inputBill}) {
               fontSize="16px"
               bold
               mb="8px"
-              // style={{ fontFamily: 'SpaceMono-Bold' }}
+              // style={{ fontFamily: 'SpaceMono-Italic' }}
             >
               Bill
             </Text>

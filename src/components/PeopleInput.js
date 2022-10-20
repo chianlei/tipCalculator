@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import {Flex, Text, Input, Center, Box, Icon} from 'native-base';
+import {Text, Input, Center, Box, Icon} from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function PeopleInput({setPeople, inputPeople}) {
   const onChangePeople = e => {
     setPeople(e);
   };
+
   return (
     <>
       <Box mx="28px" my="10px">
@@ -33,7 +34,7 @@ export default function PeopleInput({setPeople, inputPeople}) {
             keyboardType="numeric"
           />
         </Center>
-        {inputPeople == 0 ? <Text color='red.500'>Can't be zero</Text> : ''}
+        {inputPeople == 0 ? <Text color="red.500">Can't be zero</Text> : ''}
       </Box>
     </>
   );

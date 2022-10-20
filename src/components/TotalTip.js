@@ -1,12 +1,7 @@
 import React, {Component, useEffect, useState} from 'react';
 import {
-  Flex,
   Text,
   Box,
-  FormControl,
-  Center,
-  Spacer,
-  Button,
   HStack,
   Pressable,
 } from 'native-base';
@@ -24,7 +19,7 @@ export default function TotalTip({
     console.log('tip%: ' + selectedTip);
     console.log('pp: ' + inputPeople);
     console.log('td: ' + tipTD);
-        console.log('total: ' + total);
+    console.log('total: ' + total);
   });
 
   const tipAmount = (inputBill * selectedTip) / 100 / inputPeople;
@@ -50,9 +45,15 @@ export default function TotalTip({
             <Text color="#7F9E9F"> / person</Text>
           </Box>
           <Box>
-            <Text color="#26C2AE" bold fontSize="28px">
-              $ {tipTD}
-            </Text>
+            {tipTD == 'NaN' ? (
+              <Text color="#26C2AE" bold fontSize="28px">
+                $ 0
+              </Text>
+            ) : (
+              <Text color="#26C2AE" bold fontSize="28px">
+                $ {tipTD}
+              </Text>
+            )}
           </Box>
         </HStack>
         <HStack justifyContent="space-between" mx="30" my="10px">
@@ -63,9 +64,15 @@ export default function TotalTip({
             <Text color="#7F9E9F"> / person</Text>
           </Box>
           <Box>
-            <Text color="#26C2AE" bold fontSize="28px">
-              $ {total}
-            </Text>
+            {total == 'NaN' ? (
+              <Text color="#26C2AE" bold fontSize="28px">
+                $ 0
+              </Text>
+            ) : (
+              <Text color="#26C2AE" bold fontSize="28px">
+                $ {total}
+              </Text>
+            )}
           </Box>
         </HStack>
         <Pressable

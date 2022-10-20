@@ -1,29 +1,7 @@
-import React, {Component, useState, useEffect} from 'react';
-import {
-  Flex,
-  Text,
-  Button,
-  Center,
-  HStack,
-  Box,
-  Input,
-  Pressable,
-  PresenceTransition,
-  FlatList,
-  View,
-  Wrap,
-} from 'native-base';
-import {Touchable, TouchableOpacity} from 'react-native';
+import React, {Component} from 'react';
+import {Text, Box, Input, Pressable, View} from 'native-base';
 
 export default function TipSelect({setSelectedTip, selectedTip}) {
-  // const [tip, setTip] = useState([
-  //   {value: '5'},
-  //   {value: '10'},
-  //   {value: '15'},
-  //   {value: '25'},
-  //   {value: '50'},
-  // ]);
-  // const [tip, setTip] = useState(0)
   const tips = [
     {
       id: '1',
@@ -50,6 +28,7 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
   const pressHandler = value => {
     setSelectedTip(value);
   };
+
   // const styles = {
   //   container: {
   //     flexWrap: 'wrap',
@@ -65,6 +44,7 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
   //     marginTop: 5,
   //   },
   // };
+
   // return (
   //   <>
   //     <FlatList
@@ -95,7 +75,7 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
           {tips.map(tip => {
             return (
               <Pressable
-                w="160px"
+                w="158px"
                 _pressed={{
                   bg: '#26C2AE',
                 }}
@@ -104,9 +84,6 @@ export default function TipSelect({setSelectedTip, selectedTip}) {
                 mr="5"
                 rounded="sm"
                 onPress={() => pressHandler(tip.value)}
-                // _pressed={{
-                //   backgroundColor: '#26C2AE',
-                // }}
               >
                 <Text
                   // style={styles.item}
